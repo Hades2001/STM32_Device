@@ -6,6 +6,14 @@ void Time3_IntHandle(void);
 
 struct TimFunListStr HeadTimFun = { ActionFUN ,NULL , 0,0, False , NULL ,0,0, NULL };
 
+void SetFastTime( 	TimList 	*qStr ,
+					int16_t      SetTime)
+{
+	qStr->SetTime = SetTime;
+	qStr->Count_Time 	= qStr->SetTime;
+	//SetTimReCallStr( qStr );
+}
+
 void SetFastReCallFun( 	TimList *qStr , 
 						void 	(*Funptr)(void) , 
 					 	int16_t        SetTime,

@@ -1,21 +1,12 @@
-#include "stm32f10x.h"
-
 #include "LCD12864.h"
 #include "CODETAB.h"
 
-//sbit LCD_CS		=	P2^2;
-//sbit LCD_RST	=	P2^3;
-//sbit LCD_RS		=	P2^4;
-//sbit LCD_SCK	=	P2^6;
-//sbit LCD_SID	=	P2^5;
 
 #define	LCD_CS			GPIOC , GPIO_Pin_3
 #define	LCD_RST			GPIOC , GPIO_Pin_2
 #define	LCD_RS			GPIOC , GPIO_Pin_1
 #define	LCD_SCK			GPIOC , GPIO_Pin_0
 #define	LCD_SID			GPIOC , GPIO_Pin_4
-
-
 
 #define uchar 	unsigned char
 #define uint 		unsigned int
@@ -170,9 +161,7 @@ void LCD_DisSTring(unsigned char X_Data,unsigned char Y_Data,unsigned char *LCD_
 		{
 				for(Count_X = 0 ; Count_X < 6 ; Count_X++ )
 				Wirite_DataLCD(  LCD_RS_DATA , F6x8[*LCD_StringDataPrt-0x20][Count_X] );
-			
 				LCD_StringDataPrt++;
-
 		}
 }
 
