@@ -1,41 +1,36 @@
 #include "BSP_System.h"
 
-typedef void (* FunPtr_TypA)(void);
-//typedef void (* FunPtr_TypB)(void);
-//typedef void (* FunPtr_TypB)(void);
-//typedef void (* FunPtr_TypB)(void);
-
-void Hardware_Init(void);
-void Software_Init(void);
-void CPUsware_Init(void);
-void BSP_ALL_Inits(void);
-
-
-void CPUsware_Init(void)
+static int sysi_start(void)
 {
-/********************/
-	;
+    return 0;
+}
+INIT_EXPORT(sysi_start, "0");
+
+static int sysi_end(void)
+{
+    return 0;
 }
 
+INIT_EXPORT(sysi_end,"7");
 
-void Hardware_Init(void)
+void rt_components_init(void)
 {
-/********************/
-	;
-	HardWare_ALL_Init();
+	const init_fn_t* fn_ptr;
+	int	  Res = 0;
+	for (fn_ptr = &__sys_init_sysi_start; fn_ptr < &__sys_init_sysi_end; )
+	{
+		Res = (*fn_ptr)();
+		fn_ptr ++;
+	}
 }
 
-void Software_Init(void)
+int $Sub$$main(void)
 {
-/********************/
-	;
-	SoftWare_ALL_Init();
+	rt_components_init();
+	$Super$$main();
+	return 0;
 }
+ 
 
-void BSP_ALL_Inits(void)
-{
-/*******************/
-	CPUsware_Init();
-	Software_Init();
-	Hardware_Init();
-}
+
+

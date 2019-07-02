@@ -4,7 +4,7 @@ void Time1_IntHandle(void);
 void Time2_IntHandle(void);
 void Time3_IntHandle(void);
 
-struct TimFunListStr HeadTimFun = { ActionFUN ,NULL , 0,0, False , NULL ,0,0, NULL };
+struct TimFunListStr HeadTimFun = { ActionFUN ,NULL , 0,0, FALSE , NULL ,0,0, NULL };
 
 void SetFastTime( 	TimList 	*qStr ,
 					int16_t      SetTime)

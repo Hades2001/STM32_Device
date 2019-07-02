@@ -1,4 +1,3 @@
-#include "stm32f10x.h"
 #include "delay.h"
 
 static u8  fac_us=0;//us延时倍乘数
@@ -8,12 +7,13 @@ static u16 fac_ms=0;//ms延时倍乘数
 //当使用ucos的时候,此函数会初始化ucos的时钟节拍
 //SYSTICK的时钟固定为HCLK时钟的1/8
 //SYSCLK:系统时钟
-void DelayInit()
+int DelayInit(void)
 {
 	SysTick_CLKSourceConfig(SysTick_CLKSource_HCLK_Div8);	//选择外部时钟  HCLK/8
 	fac_us=SystemCoreClock/8000000;	//为系统时钟的1/8  
 	fac_ms=(u16)fac_us*1000;//非ucos下,代表每个ms需要的systick时钟数   
-}
+	return 0;
+}INIT_CPU_EXPORT(DelayInit);
 
 //延时nus
 //nus为要延时的us数.		    								   
