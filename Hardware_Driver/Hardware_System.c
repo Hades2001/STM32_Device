@@ -348,10 +348,10 @@ INIT_BOARD_EXPORT(HardWare_RCC_Init);
 
 int SerialNum(void)
 {
-  u32 Device_Serial0, Device_Serial1, Device_Serial2;	  
-  Device_Serial0 = *(vu32*)(0x1FFFF7E8); 
-  Device_Serial1 = *(vu32*)(0x1FFFF7EC); 
-  Device_Serial2 = *(vu32*)(0x1FFFF7F0); 
+	u32 Device_Serial0, Device_Serial1, Device_Serial2;	  
+	Device_Serial0 = *(vu32*)(0x1FFFF7E8); 
+	Device_Serial1 = *(vu32*)(0x1FFFF7EC); 
+	Device_Serial2 = *(vu32*)(0x1FFFF7F0); 
  
 	SystemID[0]=Device_Serial0;
 	Device_Serial0>>=8;

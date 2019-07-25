@@ -8,9 +8,14 @@
 #define MEM_TABLE_SIZE      MEM_MAX_SIZE/MEM_BLOCK_SIZE
 
 void m_Memcopy( void *des , void *src , u32 Size );
-void m_InitMalloc( void );
+int m_InitMalloc( void );
 void m_free( void *ptr );
 u8 m_GetMemPerused(void);
 void *m_Malloc( void *ptr , u32 Size );
+
+#define myfree(p)           m_free(p) 
+#define mymalloc(s)         m_Malloc(NULL,s) 
+//#define MALLOC(s)           (type *) m_Malloc ( sizeof())
+
 
 #endif

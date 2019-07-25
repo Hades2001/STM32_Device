@@ -1,7 +1,4 @@
-// #include "sys.h"
 #include "mmc_sd.h"			   
-// #include "spi.h"
-// #include "usart.h"	
 #include "STM32_SPI.h"
 					   
 u8  SD_Type=0;//SDø®µƒ¿‡–Õ 

@@ -13,7 +13,7 @@ static int sysi_end(void)
 
 INIT_EXPORT(sysi_end,"7");
 
-void rt_components_init(void)
+void sys_components_init(void)
 {
 	const init_fn_t* fn_ptr;
 	int	  Res = 0;
@@ -26,7 +26,7 @@ void rt_components_init(void)
 
 int $Sub$$main(void)
 {
-	rt_components_init();
+	sys_components_init();
 	$Super$$main();
 	return 0;
 }

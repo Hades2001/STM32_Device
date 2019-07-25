@@ -1,8 +1,7 @@
 #ifndef __IIC_H
 #define __IIC_H
 
-#include "stm32f10x.h"
-#include "stm32f10x_tim.h"
+#include "system.h"
 
 #define IIC_SDA  IIC_SDA_GPIOx, IIC_SDA_GPIO_Pin
 #define IIC_SCL  IIC_SCL_GPIOx, IIC_SCL_GPIO_Pin

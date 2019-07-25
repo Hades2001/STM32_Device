@@ -1,8 +1,8 @@
-#ifndef __Timer_H
+ #ifndef __Timer_H
 #define __Timer_H
 
 #include <stdio.h>
-#include "BSP_System.h"
+#include "System.h"
 
 extern void Time1_IntHandle(void);
 extern void Time2_IntHandle(void);
@@ -32,6 +32,12 @@ typedef struct TimFunListStr
 } TimList;
 
 void SetTimReCallStr( struct TimFunListStr *qStr );
+
+void SetFastTime( 	TimList 	*qStr ,
+					int16_t      SetTime);
+
+void DeleteTimeFromList( TimList *qStr );
+
 
 void SetFastReCallFun( 	TimList *qStr , 
                         void 	(*Funptr)(void) , 

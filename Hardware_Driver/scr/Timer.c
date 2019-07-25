@@ -26,6 +26,28 @@ void SetFastReCallFun( 	TimList *qStr ,
 	SetTimReCallStr( qStr );
 }
 
+void DeleteTimeFromList( TimList *qStr ){
+
+	TimList *pTimStrn , *pTimStrt , *pTimStrSava;
+
+	pTimStrt = &HeadTimFun;
+	pTimStrn = HeadTimFun.Next;
+
+	while( pTimStrn != NULL )
+	{
+		if( pTimStrn == qStr )
+		{
+			pTimStrt->Next 	= pTimStrn->Next;
+			pTimStrSava 	= pTimStrn->Next;
+			pTimStrn->Next 	= NULL;
+			pTimStrn 		= pTimStrSava;
+			return ;
+		}	
+		pTimStrt = pTimStrn;
+		pTimStrn = pTimStrn->Next;
+	}
+}
+
 void SetFastReFlag( 	TimList *qStr , 
 						uint8_t		*qFlag , 
 					 	int16_t		SetTime,

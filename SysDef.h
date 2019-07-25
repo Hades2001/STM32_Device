@@ -11,10 +11,10 @@ typedef unsigned short      u16;
 #define FALSE   !TRUE
 
 
-#define SECTION(x)                  __attribute__((section(x)))
-#define SYS_UNUSED                   __attribute__((unused))
-#define SYS_USED                     __attribute__((used))
-#define ALIGN(n)                    __attribute__((aligned(n)))
+#define SECTION(x)                      __attribute__((section(x)))
+#define SYS_UNUSED                      __attribute__((unused))
+#define SYS_USED                        __attribute__((used))
+#define ALIGN(n)                        __attribute__((aligned(n)))
 
 typedef int (*init_fn_t)(void);
 
@@ -26,5 +26,9 @@ typedef int (*init_fn_t)(void);
 #define INIT_COMPONENT_EXPORT(fn)       INIT_EXPORT(fn, "4")
 #define INIT_FS_EXPORT(fn)              INIT_EXPORT(fn, "5")
 #define INIT_APP_EXPORT(fn)             INIT_EXPORT(fn, "6")
+
+
+#define ENABLE_MALLOC
+#define ENABLE_RTOS
 
 #endif  //__SYSDEF_H__

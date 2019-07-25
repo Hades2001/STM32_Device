@@ -10,7 +10,7 @@
 #include "diskio.h"		/* FatFs lower layer API */
 #include "mmc_sd.h"
 // #include "flash.h"
-#include "malloc.h"		
+#include "Malloc.h"	
 
 
 #define SD_CARD	 0  //SD卡,卷标为0
@@ -26,7 +26,7 @@ u16	    FLASH_SECTOR_COUNT= 9832;	//4.8M字节,默认为W25Q64
 DSTATUS disk_initialize (
 	BYTE pdrv				/* Physical drive nmuber (0..) */
 )
-{
+{ 
 	u8 res=0;	    
 	switch(pdrv)
 	{
