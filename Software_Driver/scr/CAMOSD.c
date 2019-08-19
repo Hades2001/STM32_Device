@@ -4,7 +4,7 @@
  * @Author: sueRimn
  * @Date: 2019-06-21 09:23:54
  * @LastEditors: sueRimn
- * @LastEditTime: 2019-08-19 10:36:34
+ * @LastEditTime: 2019-08-19 14:37:05
  */
 #include "CAMOSD.h"
 
@@ -196,13 +196,14 @@ void SetOSD_Time( struct OSDTimeStr *pOSDStr )
 		OSD_Clear( pOSDStrn->Xpos , pOSDStrn->RealYPos , pOSDStrn->Count_Str );
 		LineFull[ pOSDStrn->RealYPos ] = 0;
 		
-		if( LineFull[pOSDStrn->YPos] == 0 ){
-			pOSDStrn->RealYPos = pOSDStrn->YPos;
+		if( LineFull[pOSDStr->YPos] == 0 ){
+			//pOSDStrn->RealYPos = pOSDStrn->YPos;
+			pOSDStr->RealYPos = pOSDStrn->YPos;
 		}
 		else{
 			for( Count_y = 0 ; Count_y < 12 ; Count_y ++ ){
 				if( LineFull[Count_y] == 0 ){
-					pOSDStrn->RealYPos = Count_y;
+					pOSDStr->RealYPos = Count_y;
 					break;
 				}
 			}
