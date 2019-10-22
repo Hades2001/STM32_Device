@@ -21,6 +21,7 @@ struct 	OSDTimeStr HeadOSCTime = {
 
 	.Next = NULL,
 	};
+	
 uint8_t OSDSysState = OSD_RUN;
 
 uint8_t ReNullOSDID( void )
