@@ -8,7 +8,19 @@
  */
 #include "CAMOSD.h"
 
-struct 	OSDTimeStr HeadOSCTime = { 0,0,NULL,0,0,0,0,0,0,NULL};
+struct 	OSDTimeStr HeadOSCTime = { 
+	.Xpos = 0,
+	.YPos = 0,
+	.pStr = NULL,
+	.Times = 0,
+	.Color = 0,
+	.State = 0,
+	.Count_Ti = 0,
+	.Count_Str = 0,
+	.RealYPos = 0,
+
+	.Next = NULL,
+	};
 uint8_t OSDSysState = OSD_RUN;
 
 uint8_t ReNullOSDID( void )
