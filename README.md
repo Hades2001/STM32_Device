@@ -1,7 +1,8 @@
 # STM32_Device
 
-* [File tree](#_sFileTree)
-* [Version](#_sVersion)
+- [Version](#_sVersion)
+- [File tree](#_sFileTree)
+
 
 
 ---
